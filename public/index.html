@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dungeons and Dragons</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="images/logo.png" alt="Logo" id="logo">
+        <a href="index.html">MAKE A D&D CHARACTER</a>
+        <a href="comments.html">COMMENTS</a>
+        <a href="about.html">ABOUT</a>
+    </div>
+
+    <h1>Make a story come true</h1>
+
+    <div class="box">
+        <label>
+            <input type="radio" name="gender" value="male">
+            <img src="images/male.png" alt="male" class="categoryIcons">
+            Male
+        </label>
+        <label>
+            <input type="radio" id="female" name="gender" value="female">
+            <img src="images/female.png" alt="female" class="categoryIcons">
+            Female
+        </label>
+        <p></p>
+
+        <div class="categoryMenu">
+                <div><img src="images/genetics.png" alt="genetics-category" class="categoryIcons">GENETICS</div>
+                <div><img src="images/hat.png" alt="hats-category" class="categoryIcons">HATS</div>
+                <div><img src="images/boots.png" alt="shoes-category" class="categoryIcons">SHOES</div>
+                <div><img src="images/armor.png" alt="armor-category" class="categoryIcons">SHIRTS</div>
+        </div>
+
+        <div class="box2">
+            <img src="images/wizard.png" alt="wizard" class="introduction">
+        </div>
+
+        <button type="button" id="starter" onclick="introduction()" class="button">Create Now</button>
+    </div>
+
+    <h1>Main page :)</h1>
+
+    <footer>
+        <p>Posted by: FruitJam</p>
+        <p>Contact: FruitJam@gmail.com</p>
+        <p>© 2020 FruitJam.com</p>
+    </footer>
+    <script src="../src/app.js"></script>
+    <script src="../src/arrays.js"></script>
+</body>
+</html>
