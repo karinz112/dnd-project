@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./libraries/node_modules/konva/konva.js"></script>
+    <meta charset="utf-8" />
+    <title>Konva HSV Image Demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #f0f0f0;
+      }
+
+      #controls {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+     #container{
+        position: absolute;
+        top: 50px;
+        left: 5px;
+        z-index: 2;
+     }
+     #faceContainer {
+         position: absolute;
+         top: 50px;
+         left: 5px;
+         z-index: 1;
+     }
+    </style>
+  </head>
+
+  <body>
+    <div id=mainContainer>
+        <div id="container"></div>
+        <div id="faceContainer"><img src="face.png" alt=""></div>
+    </div>
+
+        <div id="controls">
+      hue:
+      <input id="hue" type="range" min="0" max="399" step="1" value="150" />
+      saturation:
+      <input
+        id="saturation" type="range" min="-10"  max="10" step="0.5"  value="0"
+      />
+      value:
+      <input id="value" type="range" min="-2" max="2" step="0.1" value="0" />
+    </div>
+    
+    <script>
+        Konva.Image.fromURL("hair.png", function (hair) {
+          var stage = new Konva.Stage({
+            container: 'container',
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+
+  
+          var layer = new Konva.Layer();
+          var faceLayer = new Konva.Layer();
+  
+        
+          hair.cache();
+          hair.filters([Konva.Filters.HSV]);
+         
+          layer.add(hair);
+          stage.add(layer);
+  
+          var sliders = ['hue', 'saturation', 'value'];
+          sliders.forEach(function (attr) {
+            var slider = document.getElementById(attr);
+            function update() {
+                hair[attr](parseFloat(slider.value));
+              layer.batchDraw();
+            }
+            slider.oninput = update;
+            update();
+          
+        });
+      });
+      </script>
+  </body>
+</html>

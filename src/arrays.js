@@ -7,4 +7,3 @@ arrayOfArrays= [genetics, hats, shoes, shirts]
 
 console.log(arrayOfArrays[0][0])
 
-
